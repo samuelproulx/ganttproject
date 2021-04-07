@@ -1,6 +1,8 @@
 // This installs dependencyUpdates plugin
 // Run gradle dependencyUpdates to get the report
-
+plugins{
+    id "org.sonarqube" version "3.0"
+}
 // Path to launch4j binary
 ext.launch4j = '/opt/launch4j/launch4j'
 // Directories where we build the distro
