@@ -59,6 +59,8 @@ public class HumanResource implements CustomPropertyHolder {
 
   private String description;
 
+  private boolean shared = false;
+
   private LoadDistribution myLoadDistribution;
 
   private BigDecimal myStandardPayRate;
@@ -93,6 +95,7 @@ public class HumanResource implements CustomPropertyHolder {
     setMail(copy.getMail());
     setPhone(copy.getPhone());
     setRole(copy.getRole());
+    setShared(copy.isShared());
     setStandardPayRate(copy.getStandardPayRate());
     myManager = copy.myManager;
     DefaultListModel<GanttDaysOff> copyDaysOff = copy.getDaysOff();
@@ -145,6 +148,16 @@ public class HumanResource implements CustomPropertyHolder {
     this.description = description;
     fireResourceChanged();
   }
+
+  public void setShared(boolean shared) {
+    this.shared = shared;
+    fireResourceChanged();
+  }
+
+  public boolean isShared() {
+    return this.shared;
+  }
+
 
   public String getDescription() {
     return description;

@@ -265,6 +265,7 @@ public class XmlSerializer extends SaverBase {
     addAttribute("rate", i18n("colStandardRate"), attrs);
     addAttribute("totalCost", i18n("colTotalCost"), attrs);
     addAttribute("totalLoad", i18n("colTotalLoad"), attrs);
+    addAttribute("shared",i18n("colShared"),attrs);
     startPrefixedElement("resources", attrs, handler);
     {
       List<HumanResource> resources = resourceManager.getResources();
@@ -283,6 +284,8 @@ public class XmlSerializer extends SaverBase {
         textElement("mail", attrs, p.getMail(), handler);
         addAttribute("id", "3", attrs);
         textElement("phone", attrs, p.getPhone(), handler);
+        addAttribute("id", "4", attrs);
+        textElement("shared", attrs, String.valueOf(p.isShared()), handler);
         addAttribute("id", "5", attrs);
         textElement("rate", attrs, p.getStandardPayRate().toPlainString(), handler);
         addAttribute("id", "6", attrs);
