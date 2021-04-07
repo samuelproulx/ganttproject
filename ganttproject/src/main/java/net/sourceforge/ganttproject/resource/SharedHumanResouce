@@ -1,0 +1,28 @@
+<projects>
+    <project id="0">
+        <resources>
+            <resource id="0" name="asdf" function="Default:1" contacts="asdf" phone="asdf">
+                <rate name="standard" value="12"/>
+            </resource>
+        </resources>
+        <allocations>
+            <allocation task-id="0" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="25.0"/>
+            <allocation task-id="6" resource-id="0" function="Default:1" responsible="false" load="50.0"/>
+        </allocations>
+        <vacations>
+            <vacation start="2021-03-31" end="2021-04-01" resourceid="0"/>
+        </vacations>
+    </project>
+    <project id="1">
+        <resources>
+            <resource id="1" name="asdfasdf" function="SoftwareDevelopment:3" contacts="asdf" phone="asdfasdf"/>
+            <resource id="2" name="qwer" function="Default:0" contacts="qwer" phone="qwre">
+                <rate name="standard" value="10"/>
+            </resource>
+        </resources>
+        <allocations>
+        </allocations>
+        <vacations>
+        </vacations>
+    </project>
+</projects>

@@ -39,7 +39,7 @@ import java.util.List;
 class ResourcesTableModel extends TableModelExt<ResourceAssignment>
 {
 
-  static enum Column {
+  enum Column {
     ID("id", String.class), NAME("resourcename", String.class), UNIT("unit", String.class), COORDINATOR("coordinator",
         Boolean.class), ROLE("role", String.class);
 
@@ -67,7 +67,7 @@ class ResourcesTableModel extends TableModelExt<ResourceAssignment>
   private boolean isChanged = false;
 
   public ResourcesTableModel(ResourceAssignmentCollection assignmentCollection) {
-    myAssignments = new ArrayList<ResourceAssignment>(Arrays.asList(assignmentCollection.getAssignments()));
+    myAssignments = new ArrayList<>(Arrays.asList(assignmentCollection.getAssignments()));
     myMutator = assignmentCollection.createMutator();
   }
 
@@ -108,7 +108,7 @@ class ResourcesTableModel extends TableModelExt<ResourceAssignment>
           result = String.valueOf(assignment.getLoad());
           break;
         case 3:
-          result = new Boolean(assignment.isCoordinator());
+          result = (assignment.isCoordinator());
           break;
         case 4:
           result = assignment.getRoleForAssignment();
@@ -215,7 +215,7 @@ class ResourcesTableModel extends TableModelExt<ResourceAssignment>
   }
 
   public void delete(int[] selectedRows) {
-    List<ResourceAssignment> selected = new ArrayList<ResourceAssignment>();
+    List<ResourceAssignment> selected = new ArrayList<>();
     for (int row : selectedRows) {
       if (row < myAssignments.size()) {
         selected.add(myAssignments.get(row));
